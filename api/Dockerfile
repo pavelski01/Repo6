@@ -4,8 +4,6 @@ WORKDIR /api
 COPY api.csproj .
 RUN dotnet restore
 
-COPY whatever.props .
-
 COPY . .
 RUN dotnet build
 RUN dotnet publish -o /publish -c Release
