@@ -1,9 +1,16 @@
-FROM mcr.microsoft.com/dotnet/sdk:8.0
-EXPOSE 80
+﻿FROM mcr.microsoft.com/dotnet/sdk:8.0
+
 ENV ASPNETCORE_URLS http://+:80
 ENV ASPNETCORE_ENVIRONMENT Development
 
-WORKDIR /app
-COPY api/bin/Debug/net8.0/publish .
+WORKDIR /api
 
-ENTRYPOINT ["dotnet", "api.dll"]
+COPY . .
+
+RUN dotnet restore
+RUN dotnet build
+RUN dotnet publish -o /publish
+
+WORKDIR /publish
+
+ENTRYPOINT ["dotnet", "/publish/api.dll"]
