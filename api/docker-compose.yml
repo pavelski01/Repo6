@@ -1,0 +1,5 @@
+﻿ services:
+    generator:
+        image: aspnetcore/generator:multi
+        ports:
+            - "8080:80"
