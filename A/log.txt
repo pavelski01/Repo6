@@ -1,0 +1,2 @@
+C:\repo\powershell\dir\a1.txt;d41d8cd98f00b204e9800998ecf8427e
+C:\repo\powershell\dir\subdir\a2.txt;d41d8cd98f00b204e9800998ecf8427e
